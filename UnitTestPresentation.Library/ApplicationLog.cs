@@ -1,4 +1,4 @@
-﻿namespace UnitTestPresentation
+﻿namespace UnitTestPresentation.Library
 {
     public class ApplicationLog
     {

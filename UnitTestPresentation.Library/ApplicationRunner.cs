@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace UnitTestPresentation
+namespace UnitTestPresentation.Library
 {
     public class ApplicationRunner
     {

@@ -1,4 +1,6 @@
-﻿namespace UnitTestPresentation
+﻿using UnitTestPresentation.Library;
+
+namespace UnitTestPresentation
 {
     internal static class Program
     {
