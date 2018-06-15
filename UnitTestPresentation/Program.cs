@@ -8,10 +8,7 @@ namespace UnitTestPresentation
         private static void Main()
         {
             var kernel = new StandardKernel(new Binding());
-            var dateTimeProvider = kernel.Get<IDateTimeProvider>();
-            var outputHandler = kernel.Get<IOutputHandler>();
-
-            var applicationRunner = new ApplicationRunner(dateTimeProvider, outputHandler);
+            var applicationRunner = kernel.Get<ApplicationRunner>();
             applicationRunner.ShowWelcomeMessage();
         }
     }
