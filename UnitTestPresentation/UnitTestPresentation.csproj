@@ -50,6 +50,7 @@
     <Compile Include="Binding.cs" />
     <Compile Include="ConsoleOutputHandler.cs" />
     <Compile Include="DateTimeProvider.cs" />
+    <Compile Include="FakeDateTimeProvider.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
