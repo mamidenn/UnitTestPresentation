@@ -16,6 +16,7 @@ namespace UnitTestPresentation.Library
         public void ShowWelcomeMessage()
         {
             var currentDate = _dateTimeProvider.GetCurrentDateTime();
+            _outputHandler.WriteLine(string.Format(Resources.DateTimeSentence, currentDate.ToLongDateString()));
             var message = currentDate.IsChristmas() ? Resources.MerryChristmas : Resources.Welcome;
             _outputHandler.WriteLine(message);
         }

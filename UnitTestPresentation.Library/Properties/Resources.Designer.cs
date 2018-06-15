@@ -61,6 +61,15 @@ namespace UnitTestPresentation.Library.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Es ist {0}..
+        /// </summary>
+        public static string DateTimeSentence {
+            get {
+                return ResourceManager.GetString("DateTimeSentence", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Frohe Weihnachten!.
         /// </summary>
         public static string MerryChristmas {

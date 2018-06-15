@@ -59,5 +59,17 @@ namespace UnitTestPresentation.Tests
             // Assert
             _outputHandlerMock.Received(1).WriteLine(Resources.Welcome);
         }
+
+        [Test]
+        public void ShowWelcomeMessage_ShowCurrentDateTime(
+            [ValueSource(nameof(_standardDates))] DateTime date)
+        {
+            _dateTimeProviderStub.GetCurrentDateTime().Returns(date);
+
+            new ApplicationRunner(_dateTimeProviderStub, _outputHandlerMock).ShowWelcomeMessage();
+
+            _outputHandlerMock.Received(1)
+                .WriteLine(string.Format(Resources.DateTimeSentence, date.ToLongDateString()));
+        }
     }
 }

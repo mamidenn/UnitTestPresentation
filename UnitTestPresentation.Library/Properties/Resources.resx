@@ -104,4 +104,7 @@
   <data name="Welcome" xml:space="preserve">
     <value>Willkommen!</value>
   </data>
+  <data name="DateTimeSentence" xml:space="preserve">
+    <value>Es ist {0}.</value>
+  </data>
 </root>
