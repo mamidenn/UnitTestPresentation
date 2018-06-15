@@ -1,4 +1,5 @@
-﻿using UnitTestPresentation.Library;
+﻿using Ninject;
+using UnitTestPresentation.Library;
 
 namespace UnitTestPresentation
 {
@@ -6,7 +7,11 @@ namespace UnitTestPresentation
     {
         private static void Main()
         {
-            var applicationRunner = new ApplicationRunner(new DateTimeProvider(), new ConsoleOutputHandler());
+            var kernel = new StandardKernel(new Binding());
+            var dateTimeProvider = kernel.Get<IDateTimeProvider>();
+            var outputHandler = kernel.Get<IOutputHandler>();
+
+            var applicationRunner = new ApplicationRunner(dateTimeProvider, outputHandler);
             applicationRunner.ShowWelcomeMessage();
         }
     }
