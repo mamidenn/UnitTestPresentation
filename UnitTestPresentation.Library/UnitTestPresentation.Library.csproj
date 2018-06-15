@@ -48,6 +48,8 @@
   <ItemGroup>
     <Compile Include="ApplicationLog.cs" />
     <Compile Include="ApplicationRunner.cs" />
+    <Compile Include="IDateTimeProvider.cs" />
+    <Compile Include="IOutputHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

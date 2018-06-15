@@ -6,7 +6,7 @@ namespace UnitTestPresentation
     {
         private static void Main()
         {
-            var applicationRunner = new ApplicationRunner();
+            var applicationRunner = new ApplicationRunner(new DateTimeProvider(), new ConsoleOutputHandler());
             applicationRunner.ShowWelcomeMessage();
         }
     }
