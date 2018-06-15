@@ -11,6 +11,19 @@ namespace UnitTestPresentation.Tests
         private IDateTimeProvider _dateTimeProviderStub;
         private IOutputHandler _outputHandlerMock;
 
+        private static DateTime[] _christmasDates =
+        {
+            new DateTime(2018, 12, 25),
+            new DateTime(2018, 12, 26)
+        };
+
+        private static DateTime[] _standardDates =
+        {
+            new DateTime(2018, 12, 24),
+            new DateTime(1592, 3, 14),
+            new DateTime(1977, 5, 25)
+        };
+
         [SetUp]
         public void SetUp()
         {
@@ -19,10 +32,11 @@ namespace UnitTestPresentation.Tests
         }
 
         [Test]
-        public void ShowWelcomeMessage_ItsChristmas_ShowChristmasMessage()
+        public void ShowWelcomeMessage_ItsChristmas_ShowChristmasMessage(
+            [ValueSource(nameof(_christmasDates))] DateTime date)
         {
             // Arrange
-            _dateTimeProviderStub.GetCurrentDateTime().Returns(new DateTime(2018, 12, 25));
+            _dateTimeProviderStub.GetCurrentDateTime().Returns(date);
 
             // Act
             new ApplicationRunner(_dateTimeProviderStub, _outputHandlerMock).ShowWelcomeMessage();
@@ -32,10 +46,11 @@ namespace UnitTestPresentation.Tests
         }
 
         [Test]
-        public void ShowWelcomeMessage_ItsNotChristmas_ShowDefaultMessage()
+        public void ShowWelcomeMessage_ItsNotChristmas_ShowDefaultMessage(
+            [ValueSource(nameof(_standardDates))] DateTime date)
         {
             // Arrange
-            _dateTimeProviderStub.GetCurrentDateTime().Returns(new DateTime(2018, 12, 24));
+            _dateTimeProviderStub.GetCurrentDateTime().Returns(date);
 
             // Act
             new ApplicationRunner(_dateTimeProviderStub, _outputHandlerMock).ShowWelcomeMessage();
