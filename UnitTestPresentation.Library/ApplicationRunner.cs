@@ -1,4 +1,4 @@
-﻿using System;
+﻿using UnitTestPresentation.Library.Properties;
 
 namespace UnitTestPresentation.Library
 {
@@ -16,11 +16,7 @@ namespace UnitTestPresentation.Library
         public void ShowWelcomeMessage()
         {
             var currentDate = _dateTimeProvider.GetCurrentDateTime();
-            string message;
-            if (currentDate.Month == 12 && (currentDate.Day == 25 || currentDate.Day == 26))
-                message = "Frohe Weihnachten!";
-            else
-                message = "Willkommen!";
+            var message = currentDate.IsChristmas() ? Resources.MerryChristmas : Resources.Welcome;
             _outputHandler.WriteLine(message);
         }
     }

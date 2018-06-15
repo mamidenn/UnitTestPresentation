@@ -2,6 +2,7 @@
 using NSubstitute;
 using NUnit.Framework;
 using UnitTestPresentation.Library;
+using UnitTestPresentation.Library.Properties;
 
 namespace UnitTestPresentation.Tests
 {
@@ -42,7 +43,7 @@ namespace UnitTestPresentation.Tests
             new ApplicationRunner(_dateTimeProviderStub, _outputHandlerMock).ShowWelcomeMessage();
 
             // Assert
-            _outputHandlerMock.Received(1).WriteLine("Frohe Weihnachten!");
+            _outputHandlerMock.Received(1).WriteLine(Resources.MerryChristmas);
         }
 
         [Test]
@@ -56,7 +57,7 @@ namespace UnitTestPresentation.Tests
             new ApplicationRunner(_dateTimeProviderStub, _outputHandlerMock).ShowWelcomeMessage();
 
             // Assert
-            _outputHandlerMock.Received(1).WriteLine("Willkommen!");
+            _outputHandlerMock.Received(1).WriteLine(Resources.Welcome);
         }
     }
 }
